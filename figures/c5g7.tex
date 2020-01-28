@@ -1,0 +1,150 @@
+\documentclass{standalone}
+
+\usepackage{tikz} % Allows creation of tikz pictures
+\usetikzlibrary{arrows,shapes,snakes}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.1, every node/.style={scale=1}]
+        \filldraw[xshift=42.84 cm, yshift=0 cm, fill=blue!30!white, draw=black] 
+        (0, 0) rectangle (21.42,21.42) node[pos=.5] {Mod};
+        \filldraw[xshift=42.84 cm, yshift=21.42 cm, fill=blue!30!white, 
+draw=black] 
+        (0, 0) rectangle (21.42,21.42) node[pos=.5] {Mod};
+        \filldraw[xshift=42.84 cm, yshift=-21.42 cm, fill=blue!30!white, 
+draw=black] 
+        (0, 0) rectangle (21.42,21.42) node[pos=.5] {Mod};
+        \filldraw[xshift=21.42 cm, yshift=-21.42 cm, fill=blue!30!white, 
+draw=black] 
+        (0, 0) rectangle (21.42,21.42) node[pos=.5] {Mod};
+        \filldraw[xshift=0 cm, yshift=-21.42 cm, fill=blue!30!white, draw=black] 
+        (0, 0) rectangle (21.42,21.42) node[pos=.5] {Mod};
+        
+        % Make Blue boxes for each pin cell
+        \foreach \x in {0,1.26,...,41.58}
+        \foreach \y in {0,1.26,...,41.58}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (0, 0) rectangle (1.26,1.26) node[pos=.5] {};
+        
+        % Make green circles for UO2
+        \foreach \x in {0,1.26,...,20.16}
+        \foreach \y in {21.42,22.68,...,41.58}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=green!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        % Fill in rod locations with blue
+        \foreach \x in {5*1.26, 8*1.26, 11*1.26}
+        \foreach \y in {2*1.26, 14*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {3*1.26, 13*1.26}
+        \foreach \y in {3*1.26, 13*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {2*1.26, 5*1.26, 8*1.26, 11*1.26, 14*1.26}
+        \foreach \y in {5*1.26, 8*1.26, 11*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        
+        % Make green circles for UO2
+        \foreach \x in {21.42,22.68,...,41.58}
+        \foreach \y in {0,1.26,...,20.16}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=green!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        % Fill in rod locations with blue
+        \foreach \x in {22*1.26, 25*1.26, 28*1.26}
+        \foreach \y in {19*1.27, 31*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {20*1.26, 30*1.26}
+        \foreach \y in {20*1.26, 30*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {19*1.26, 22*1.26, 25*1.26, 28*1.26, 31*1.26}
+        \foreach \y in {22*1.26, 25*1.26, 28*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        
+        % Make light MOX circles
+        \foreach \x in {0,1.26,...,20.16}
+        \foreach \y in {0,1.26,...,20.16}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!30!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        % Make medium MOX circles
+        \foreach \x in {1.26,2.52,...,20.16}
+        \foreach \y in {1.26,2.52,...,20.16}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!60!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        % Make dark MOX circles
+        \foreach \x in {5*1.26,6*1.26,7*1.26,8*1.26,9*1.26,10*1.26,11*1.26}
+        \foreach \y in {3*1.26,13*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!90!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in 
+        {4*1.26,5*1.26,6*1.26,7*1.26,8*1.26,9*1.26,10*1.26,11*1.26,12*1.26}
+        \foreach \y in {4*1.26,12*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!90!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {3.78,5.04,...,16.38}
+        \foreach \y in {6.3,7.56,...,15.04}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!90!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        % Fill in rod locations with blue
+        \foreach \x in {5*1.26, 8*1.26, 11*1.26}
+        \foreach \y in {19*1.26, 31*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {3*1.26, 13*1.26}
+        \foreach \y in {20*1.26, 30*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {2*1.26, 5*1.26, 8*1.26, 11*1.26, 14*1.26}
+        \foreach \y in {22*1.26, 25*1.26, 28*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        
+        % Make light MOX circles
+        \foreach \x in {21.42,22.68,...,41.58}
+        \foreach \y in {21.42,22.68,...,41.58}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!30!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        % Make medium MOX circles
+        \foreach \x in {22.68,23.94,...,41.58}
+        \foreach \y in {22.68,23.94,...,41.58}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!60!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        % Make dark MOX circles
+        \foreach \x in {22*1.26,23*1.26,24*1.26,25*1.26,26*1.26,27*1.26,28*1.26}
+        \foreach \y in {20*1.26,30*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!90!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in        
+{21*1.26,22*1.26,23*1.26,24*1.26,25*1.26,26*1.26,27*1.26,28*1.26,29*1.26}
+        \foreach \y in {21*1.26,29*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!90!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {25.2,26.46,...,39.06}
+        \foreach \y in {27.72,28.98,...,36.46}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=red!90!white, draw=black] 
+        (.63,.63) circle (.5) node[pos=.5] {};
+        % Fill in rod locations with blue
+        \foreach \x in {22*1.26, 25*1.26, 28*1.26}
+        \foreach \y in {2*1.26, 14*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {20*1.26, 30*1.26}
+        \foreach \y in {3*1.26, 13*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+        \foreach \x in {19*1.26, 22*1.26, 25*1.26, 28*1.26, 31*1.26}
+        \foreach \y in {5*1.26, 8*1.26, 11*1.26}
+        \filldraw[xshift=\x cm, yshift=\y cm, fill=blue!30!white, 
+        draw=black] (.63,.63) circle (.5) node[pos=.5] {};
+       
+        \draw[xshift=3*21.42cm,yshift=0.5*21.42cm] node[right] 
+        {\rotatebox{-90}{Vacuum}};
+        \draw[yshift=0.5*21.42cm] node[left] {\rotatebox{90}{Reflect}};
+        \draw[xshift=1.5*21.42cm,yshift=2*21.42cm] node[center, above] 
+{{Reflect}};
+        \draw[xshift=1.5*21.42cm,yshift=-21.42cm] node[center, below] {{Vacuum}};
+    \end{tikzpicture}
+
+\end{document}
